@@ -148,7 +148,7 @@ export default function SearchFilterBar(props) {
                 <li onClick={() => handleRoute({brand: "Fossil"})}>Fossil</li>
                 <li onClick={() => handleRoute({brand: "Chandrakala"})}>Chandrakala</li>
                 <li onClick={() => handleRoute({brand: "Mad Over Shopping"})}>Mad Over Shopping</li>
-                <li onClick={() => handleRoute({brand: "The Children's Place"})}>The Children's Place</li>
+                <li onClick={() => handleRoute({brand: "The Children's Place"})}>The Children&apos;s Place</li>
                 <li onClick={() => handleRoute({brand: "MdnMd"})}>MdnMd</li>
                 <li onClick={() => handleRoute({brand: "Nike"})}>Nike</li>
             </ul>

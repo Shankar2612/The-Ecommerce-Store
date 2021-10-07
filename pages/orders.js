@@ -84,8 +84,8 @@ function OrdersScreen(props) {
                     <div className={styles.orderDetails}>
                         <h1>All Orders:</h1>
                         {props.orders ? props.orders.map(order => {
-                            return order.orderItems.map(eachOrder => {
-                                return <MyOrderCard order={eachOrder} orderItem={order} />
+                            return order.orderItems.map((eachOrder, index) => {
+                                return <MyOrderCard key={index} order={eachOrder} orderItem={order} />
                             })
                         }) : <div className={styles.noOrders}>
                             <img src="https://cdn-icons-png.flaticon.com/128/1376/1376786.png" alt="empty-box-icon" />

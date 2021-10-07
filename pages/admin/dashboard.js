@@ -127,7 +127,7 @@ function DashboardScreen(props) {
                                     <p className={styles.description}>These are the categories which are loved by our customers.</p>
                                     <table>
                                         {props.ordersSoldTodayArray.map((orderSoldToday, index) => {
-                                            return <tr>
+                                            return <tr key={index}>
                                                     <td><div className={styles.bulletedList}></div></td>
                                                     <td>{orderSoldToday.category}</td>
                                                 </tr>
