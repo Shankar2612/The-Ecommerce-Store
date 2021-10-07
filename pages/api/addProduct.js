@@ -4,10 +4,13 @@ import mongoose from "mongoose";
 import express from "express";
 import Product from "../../models/Product";
 import data from "../../utils/data";
+require("dotenv").config();
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+
+mongoose.connect(`${process.env.MONGODB_URL}/webshopDB`, {useNewUrlParser: true});
 
 export default app.get("/api/addProduct", async (req, res) => {
   await Product.find({}, async function(err, docs) {
