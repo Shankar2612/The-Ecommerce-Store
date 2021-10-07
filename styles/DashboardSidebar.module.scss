@@ -1,0 +1,85 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.dashboardSidebar {
+  width: 20%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ff449f, #005f99);
+  @include flex(column, flex-start, center);
+  box-shadow: 4px 0px 7px rgba($color: #000000, $alpha: 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  h2 {
+    @include font($fontFamilyDMSerifDisplay, 25px, 500);
+    letter-spacing: 1.5px;
+    color: white;
+    padding: 30px 45px;
+    // margin: 0px;
+  }
+
+  .dashboardNavItems {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+    margin-top: 50px;
+
+    .navItemActive,
+    .navItemInactive {
+      width: 100%;
+      @include flex(row, flex-start, center);
+      // margin-bottom: 30px;
+      padding: 18px 45px;
+      // background-color: yellow;
+
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+
+        img {
+          transform: scale(1.1);
+        }
+
+        p {
+          color: $dashboardBlue;
+        }
+      }
+
+      img {
+        width: 23px;
+        transform: scale(1);
+        transition: all 0.25s ease-in-out;
+      }
+
+      p {
+        margin: 0px;
+        @include font($fontFamilyMontserrat, 16px, 600);
+        margin-left: 20px;
+        color: black;
+      }
+    }
+
+    .navItemActive {
+      background-color: white;
+      cursor: pointer;
+
+      img {
+        transform: scale(1.1);
+      }
+
+      p {
+        color: $dashboardBlue;
+      }
+    }
+  }
+
+  p {
+    margin: 0px;
+    margin-top: auto;
+    color: white;
+    margin-bottom: 20px;
+    @include font($fontFamilyMontserrat, 15px, 400);
+  }
+}

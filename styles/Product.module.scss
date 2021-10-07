@@ -1,0 +1,209 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.container {
+  width: 100%;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 0.8fr;
+  grid-gap: 28px;
+  margin-top: 60px;
+
+  .productImage {
+    max-width: 100%;
+    max-height: 700px;
+    margin: 0px auto;
+  }
+
+  .productInfo {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+
+    .select {
+      width: 60px;
+      margin-bottom: 25px;
+      border: 1px solid $shadowColor;
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    h1 {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 24px, 500);
+      letter-spacing: 0.5px;
+      line-height: 32px;
+      margin-bottom: 8px;
+
+      @include screenThree {
+        font-size: 21px;
+        letter-spacing: 0.2px;
+      }
+
+      @include screenFour {
+        font-size: 19px;
+        // letter-spacing: 0.2px;
+        line-height: normal;
+      }
+    }
+
+    .starContainer {
+      width: fit-content;
+      margin-bottom: 8px;
+    }
+
+    .line {
+      margin: 0px;
+      width: 100%;
+      height: 2px;
+      background-color: $navbarColor;
+      margin-bottom: 18px;
+      border: none;
+    }
+
+    .priceContainer {
+      @include flex(row, flex-start, center);
+      margin-bottom: 15px;
+
+      p {
+        margin: 0px;
+        @include font($fontFamilyPoppins, 17px, 500);
+        margin-right: 20px;
+      }
+
+      .oldPrice {
+        @include flex(row, flex-start, center);
+
+        p {
+          margin: 0px;
+          @include font($fontFamilyPoppins, 14px, 500);
+          text-decoration: line-through;
+          color: $oldPriceColor;
+        }
+      }
+    }
+
+    .savedPrice {
+      @include flex(row, flex-start, center);
+      margin-bottom: 20px;
+
+      p {
+        margin: 0px;
+        margin-right: 5px;
+        @include font($fontFamilyPoppins, 16px, 400);
+      }
+
+      img {
+        width: fit-content;
+      }
+
+      .priceSaved {
+        font-weight: 600;
+        background-color: black;
+        color: white;
+        padding: 4px;
+        border-radius: 4px;
+        width: fit-content;
+      }
+    }
+
+    .colorHeading {
+      @include font($fontFamilyPoppins, 16px, 600);
+      margin: 0px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .colorContainer {
+      width: 100%;
+      @include flex(row, flex-start, center);
+      margin-bottom: 30px;
+
+      .colorPalette {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+        box-shadow: 0px 0px 6px $shadowColor;
+      }
+    }
+
+    .cartAndWishlist {
+      width: 50%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      margin-bottom: 30px;
+
+      button {
+        // background-color: $addToCartButtonColor;
+        // border: none;
+        padding: 10px 0px;
+        // border-radius: 8px;
+        // @include font($fontFamilyPoppins, 14px, 600);
+        // transform: scale(1);
+        // transition: all 0.15s ease-in-out;
+        @include button();
+
+        &:hover {
+          transform: scale(1.02);
+          cursor: pointer;
+        }
+      }
+
+      .wishlist {
+        background-color: $addToWishlistButtonColor;
+        color: white;
+      }
+
+      @include screenFour {
+        width: 70%;
+      }
+
+      @include screenFive {
+        width: 100%;
+      }
+    }
+
+    .productDescription {
+      width: 100%;
+      margin: 0px;
+
+      li {
+        @include font($fontFamilyPoppins, 15px, 500);
+        letter-spacing: 0.3px;
+        line-height: 23px;
+        margin-bottom: 5px;
+
+        @include screenFour {
+          font-size: 14.5px;
+        }
+      }
+
+      @include screenFive {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  @include screenOne {
+    padding: 60px 40px;
+  }
+
+  @include screenTwo {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @include screenTwoThree {
+    grid-template-columns: 1.5fr 2fr;
+  }
+
+  @include screenThreeFour {
+    grid-template-columns: 1fr;
+    padding: 40px 30px;
+    grid-gap: 30px;
+  }
+}

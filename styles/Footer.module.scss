@@ -1,0 +1,35 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: $navbarColor;
+  @include flex(row, center, center);
+  color: #fff5b7;
+
+  a {
+    @include font($fontFamilyRoboto, 20px, 600);
+    letter-spacing: 1px;
+  }
+
+  .line {
+    width: 2.5px;
+    background-color: #fff5b7;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 50px;
+  }
+
+  p {
+    margin: 0px;
+    @include font($fontFamilyDMSerifDisplay, 14px, 500);
+    margin-right: 20px;
+    letter-spacing: 0.5px;
+
+    @include screenFour {
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+}

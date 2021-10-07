@@ -1,0 +1,64 @@
+@import "./variables.module";
+@import "./mixins.module";
+
+.orders {
+  width: 100%;
+
+  .orderPage {
+    width: 100%;
+    margin-top: 75px;
+    background-color: $cartBackgroundColor;
+    min-height: 80vh;
+    @include flex(row, center, center);
+
+    .orderDetails {
+      width: 50%;
+      @include flex(column, flex-start, flex-start);
+      padding: 25px;
+      background-color: white;
+      margin: 30px 0px;
+
+      h1 {
+        @include font($fontFamilyRoboto, 20px, 600);
+        letter-spacing: 1px;
+        margin: 0px 0px 35px 0px;
+      }
+
+      .noOrders {
+        width: 100%;
+        @include flex(column, flex-start, center);
+
+        img {
+          width: 80px;
+        }
+
+        p {
+          margin: 15px 0px;
+          @include font($fontFamilyPoppins, 15px, 500);
+        }
+
+        a {
+          @include button();
+          padding: 8px 20px;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      @include screenTwo {
+        width: 550px;
+      }
+
+      @include screenThreeFour {
+        width: 80%;
+      }
+
+      @include screenFive {
+        width: 95%;
+      }
+    }
+  }
+}

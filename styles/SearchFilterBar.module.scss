@@ -1,0 +1,170 @@
+@import "./variables.module";
+@import "./mixins.module";
+
+.searchBar,
+.open {
+  width: 20%;
+  padding: 25px;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: 5;
+  bottom: 0;
+  box-shadow: 3px 0px 12px grey;
+  //   height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: white;
+
+  .close {
+    display: none;
+
+    img {
+      display: none;
+      width: 20px;
+      margin-left: auto;
+
+      @include screenTwoTwoThree {
+        display: block;
+      }
+    }
+
+    @include screenTwoTwoThree {
+      display: block;
+    }
+  }
+
+  h4 {
+    margin: 0px;
+    @include font($fontFamilyPoppins, 16px, 600);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 7px 10px;
+    margin: 0px;
+    margin-bottom: 15px;
+
+    li {
+      width: 100%;
+      @include flex(row, flex-start, center);
+      @include font($fontFamilyPoppins, 14px, 400);
+      padding: 8px;
+
+      &:hover {
+        cursor: pointer;
+
+        span {
+          font-weight: 500;
+        }
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      span {
+        margin-left: 5px;
+      }
+
+      img {
+        width: 22px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .priceInputDiv {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    @include flex(column, flex-start, center);
+
+    .priceInput {
+      @include flex(row, flex-start, center);
+      margin-bottom: 13px;
+
+      input {
+        width: 70px;
+        border-radius: 5px;
+        border: 1.5px solid black;
+        padding: 4px;
+        @include font($fontFamilyPoppins, 13px, 400);
+      }
+
+      span {
+        margin: 0px 8px;
+      }
+    }
+
+    button {
+      @include button();
+      padding: 3px 15px;
+      font-size: 13px;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .rating {
+    li {
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .color {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    padding: 10px;
+
+    &Pallete {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0px 10px 10px 0px;
+      box-shadow: 0px 0px 8px rgb(193, 193, 193);
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .brand {
+    li {
+      &:hover {
+        font-weight: 500;
+      }
+    }
+  }
+
+  @include screenTwo {
+    width: 250px;
+    padding: 25px 17px;
+  }
+
+  @include screenThree {
+    transform: translateX(-280px);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.searchBar::-webkit-scrollbar {
+  display: none;
+}
+
+.open {
+  transform: translateX(0px);
+  transition: all 0.3s ease-in-out;
+}

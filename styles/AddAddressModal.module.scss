@@ -1,0 +1,99 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 400px;
+  //   height: 300px;
+  z-index: 30;
+  border-radius: 4px;
+  @include flex(column, flex-start, flex-start);
+
+  .modalBar {
+    width: 100%;
+    @include flex(row, space-between, center);
+    padding: 20px;
+    border-bottom: 1px solid $cartBackgroundColor;
+
+    h1 {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 16px, 600);
+      letter-spacing: 0.5px;
+    }
+
+    img {
+      width: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modalBody {
+    width: 100%;
+    padding: 25px;
+    border-bottom: 1px solid $cartBackgroundColor;
+    height: 450px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    p {
+      margin: 0px 0px 10px 0px;
+      @include font($fontFamilyRoboto, 14px, 500);
+      letter-spacing: 0.3px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid $oldPriceColor;
+      border-radius: 3px;
+      @include font($fontFamilyRoboto, 13.5px, 400);
+      letter-spacing: 0.3px;
+      margin-bottom: 15px;
+    }
+
+    .getPinDetails {
+      width: 100%;
+      @include flex(row, flex-start, center);
+      margin-bottom: 15px;
+
+      button {
+        margin: 0px 10px 0px 0px;
+        @include button();
+        padding: 5px 15px;
+        font-size: 12px;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .modalConfirmAddress {
+    width: 100%;
+    padding: 10px;
+    @include flex(row, center, center);
+
+    button {
+      @include button();
+      padding: 8px 15px;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include screenFour {
+    width: 350px;
+  }
+}

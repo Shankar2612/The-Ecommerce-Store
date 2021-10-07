@@ -1,0 +1,103 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.cartCardTwo {
+  display: none;
+  padding: 15px;
+
+  .cardContainer {
+    @include grid(20px);
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 25px;
+    margin-bottom: 40px;
+
+    img {
+      width: 100%;
+    }
+
+    .cardInfo {
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+
+      h3 {
+        @include font($fontFamilyPoppins, 17px, 600);
+        margin: 0px 0px 15px 0px;
+
+        @include screenThreeFour {
+          font-size: 15.5px;
+        }
+      }
+
+      p {
+        @include font($fontFamilyPoppins, 15px, 400);
+        margin: 0px 0px 15px 0px;
+
+        @include screenThreeFour {
+          font-size: 14px;
+        }
+      }
+
+      .priceContainer {
+        width: 100%;
+        @include flex(row, flex-start, center);
+        margin: 0px 0px 10px 0px;
+
+        p {
+          @include font($fontFamilyPoppins, 15px, 600);
+          margin: 0px;
+
+          span {
+            font-weight: 400;
+            margin-left: 7px;
+          }
+
+          @include screenThreeFour {
+            font-size: 14px;
+          }
+        }
+
+        .quantity {
+          @include flex(row, flex-start, center);
+          margin-left: 20px;
+
+          .select {
+            width: 50px;
+            border: 1px solid $shadowColor;
+            padding: 5px 8px;
+            border-radius: 5px;
+            margin-left: 7px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      button {
+        @include button();
+        padding: 6px 10px;
+        background-color: $addToWishlistButtonColor;
+        color: white;
+        font-weight: 500;
+
+        &:hover {
+          transform: scale(1.05);
+          cursor: pointer;
+        }
+      }
+    }
+
+    @include screenFour {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include screenTwo {
+    display: block;
+  }
+
+  @include screenThreeFour {
+    padding: 13px 0px;
+  }
+}

@@ -1,0 +1,263 @@
+@import "./variables.module";
+@import "./mixins.module";
+
+.sidebar,
+.none {
+  transform: translateX(0%);
+  transition: all 0.3s ease-in-out;
+  width: 23%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  //   bottom: 0;
+  height: 100%;
+  overflow-y: scroll;
+  @include flex(column, flex-start, flex-start);
+  box-shadow: 3px 0px 12px rgb(41, 41, 41);
+  scroll-behavior: smooth;
+
+  &Heading {
+    width: 100%;
+    padding: 20px;
+    background-color: $cartBackgroundColor;
+    @include flex(row, space-between, center);
+    margin-bottom: 35px;
+
+    img {
+      width: 25px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &ImgDiv {
+      @include flex(row, flex-start, center);
+
+      img {
+        width: 50px;
+        border-radius: 50%;
+      }
+
+      .userInfo {
+        @include flex(column, flex-start, flex-start);
+        margin-left: 20px;
+
+        p {
+          margin: 0px;
+          @include font($fontFamilyPoppins, 15px, 500);
+          letter-spacing: 0.3px;
+
+          a {
+            margin-left: 15px;
+            font-size: 11.5px;
+            color: $navbarColor;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          @include screenFour {
+            font-size: 14px;
+          }
+        }
+
+        .salutation {
+          font-weight: 600;
+          font-size: 16px;
+
+          @include screenFour {
+            font-size: 14.5px;
+          }
+        }
+
+        @include screenTwo {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .categoriesElectronics,
+  .categoriesComputers,
+  .categoriesMen,
+  .categoriesWomen,
+  .categoriesKids {
+    width: 100%;
+    // background-color: $cartBackgroundColor;
+    // padding: 25px;
+    min-height: 90px;
+    margin-bottom: 8px;
+    position: relative;
+
+    p {
+      @include font($fontFamilyPoppins, 22px, 600);
+      margin: 0px;
+      letter-spacing: 1px;
+      color: white;
+      z-index: 5;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      padding: 0px 25px;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .categoriesElectronics::after,
+  .categoriesComputers::after,
+  .categoriesMen::after,
+  .categoriesWomen::after,
+  .categoriesKids::after {
+    content: "";
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .categoriesElectronics {
+    background-image: url("https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZWxlY3Ryb25pY3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .categoriesComputers {
+    background-image: url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbXB1dGVyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .categoriesMen {
+    background-image: url("https://images.unsplash.com/3/www.madebyvadim.com.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1lbiUyMGZhc2hpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .categoriesWomen {
+    background-image: url("https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHdvbWVuJTIwZmFzaGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .categoriesKids {
+    background-image: url("https://images.unsplash.com/photo-1602542164986-edc061d9c52f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGtpZCUyMGZhc2hpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .settings {
+    width: 100%;
+    padding: 15px 25px;
+    @include flex(column, flex-start, flex-start);
+
+    &Heading {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 18px, 600);
+      margin-bottom: 10px;
+    }
+
+    // p,
+    // .myOrders {
+    //   width: 100%;
+    //   margin: 0px;
+    //   @include font($fontFamilyPoppins, 14px, 400);
+    //   margin-bottom: 8px;
+
+    //   &:hover {
+    //     cursor: pointer;
+    //     font-weight: 500;
+    //   }
+    // }
+
+    button,
+    a {
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      width: 100%;
+      margin: 0px;
+      @include font($fontFamilyPoppins, 14px, 400);
+      text-align: left;
+
+      &:hover {
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+
+    .savedAddresses {
+      width: 100%;
+      @include flex(row, flex-start, center);
+      margin-bottom: 18px;
+
+      img {
+        width: 18px;
+        margin-right: 10px;
+      }
+
+      p {
+        width: 100%;
+        margin: 0px;
+        @include font($fontFamilyPoppins, 14px, 400);
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          width: 20px;
+        }
+
+        p {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  @include screenOne {
+    width: 27%;
+  }
+
+  @include screenTwo {
+    width: 33%;
+  }
+
+  @include screenTwoThree {
+    width: 38%;
+  }
+
+  @include screenThree {
+    width: 43%;
+  }
+
+  @include screenFour {
+    width: 55%;
+  }
+
+  @include screenFive {
+    width: 70%;
+  }
+}
+
+.sidebar::-webkit-scrollbar,
+.none::-webkit-scrollbar {
+  display: none;
+}
+
+.none {
+  transform: translateX(-120%);
+  transition: all 0.3s ease-in-out;
+}

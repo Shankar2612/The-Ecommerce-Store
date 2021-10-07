@@ -1,0 +1,153 @@
+@import "./variables.module";
+@import "./mixins.module";
+
+.search {
+  width: 100%;
+  //   @include grid(0px);
+  //   grid-gap: 0px;
+  //   grid-template-columns: 1fr 4fr;
+  margin-top: 75px;
+  //   position: absolute;
+  //   height: fit-content;
+  //   overflow-y: scroll;
+  //   left: 20%;
+
+  .openSidebar {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 10px;
+    box-shadow: 4px 0px 8px rgba($color: #000000, $alpha: 0.35);
+    z-index: 4;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: white;
+
+    img {
+      display: none;
+      width: 20px;
+
+      @include screenThree {
+        display: block;
+      }
+    }
+
+    @include screenThree {
+      display: block;
+      @include flex(row, center, center);
+    }
+  }
+
+  &Results {
+    // width: 100%;
+    padding: 15px;
+    position: absolute;
+    left: 20%;
+    right: 0;
+    // margin-left: 250px;
+
+    .searchTags {
+      width: 100%;
+      padding: 10px;
+      //   background-color: yellow;
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+
+      .tag {
+        @include flex(row, flex-start, center);
+        padding: 5px 10px;
+        background-color: $cartBackgroundColor;
+        border-radius: 5px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+
+        p {
+          margin: 0px;
+          @include font($fontFamilyPoppins, 14px, 500);
+          margin-right: 10px;
+        }
+
+        img {
+          width: 17px;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: $addToCartButtonColor;
+        }
+      }
+    }
+
+    hr {
+      width: 100%;
+      height: 2px;
+      background-color: $cartBackgroundColor;
+      border: none;
+    }
+
+    .queryResult {
+      width: 100%;
+      padding: 40px;
+      @include grid(50px);
+      grid-gap: 50px;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      @include screenTwo {
+        padding: 25px;
+        grid-gap: 25px;
+      }
+
+      @include screenTwoTwoThree {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include screenFour {
+        padding: 15px 5px;
+        grid-column-gap: 15px;
+        grid-row-gap: 23px;
+      }
+
+      @include screenFive {
+        grid-template-columns: 1fr;
+        grid-row-gap: 28px;
+      }
+    }
+
+    .emptyQueryResult {
+      width: 100%;
+      padding: 40px;
+      @include flex(column, center, center);
+      //   margin: 0px;
+
+      img {
+        width: 50px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        width: 100%;
+        @include font($fontFamilyPoppins, 15px, 500);
+        text-align: center;
+        margin: 0px;
+      }
+    }
+
+    @include screenTwo {
+      left: 250px;
+    }
+
+    @include screenThree {
+      left: 0;
+    }
+  }
+
+  @include screenThree {
+    position: relative;
+  }
+}

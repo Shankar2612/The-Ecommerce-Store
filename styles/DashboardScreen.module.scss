@@ -1,0 +1,111 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.dashboard {
+  // width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20%;
+
+  // @include grid(20px);
+  // grid-template-columns: 1fr 4.5fr;
+  // grid-gap: 0px;
+
+  &Main {
+    width: 100%;
+
+    .dashboardArea {
+      width: 100%;
+      padding: 15px 30px;
+      margin-top: 60px;
+
+      .dashboardCard {
+        width: 100%;
+        @include grid(20px);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 30px;
+        margin-bottom: 20px;
+      }
+
+      .graphAndProductsCategories {
+        width: 100%;
+        @include grid(20px);
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 30px;
+        align-items: flex-start;
+
+        .productsCategories {
+          width: 100%;
+          @include flex(column, flex-start, flex-start);
+
+          .products,
+          .categories {
+            width: 100%;
+            padding: 15px 0px;
+            @include flex(column, flex-start, flex-start);
+            margin-bottom: 20px;
+            box-shadow: 0px 3px 5px rgba($color: #000000, $alpha: 0.25);
+            margin-top: 10px;
+            border-radius: 15px;
+            max-height: 200px;
+            overflow-y: scroll;
+
+            p {
+              width: 100%;
+              @include font($fontFamilyMontserrat, 15px, 500);
+              margin: 0px 0px 15px 0px;
+              padding: 0px 15px;
+            }
+
+            .description {
+              font-weight: 400;
+              font-size: 13px;
+              margin-bottom: 15px;
+            }
+
+            table {
+              width: 100%;
+              // padding: 0px;
+              border-collapse: collapse;
+
+              th {
+                background-color: $dashboardBlue;
+                padding: 6px 0px;
+                text-align: center;
+                color: white;
+              }
+
+              td,
+              th {
+                text-align: center;
+                @include font($fontFamilyMontserrat, 15px, 600);
+              }
+
+              td {
+                padding: 7px 15px;
+
+                .bulletedList {
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 50%;
+                  background-color: $dashboardPink;
+                }
+              }
+            }
+          }
+
+          .categories {
+            table {
+              td {
+                // padding-left: 0px;
+                // padding-right: 0px;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

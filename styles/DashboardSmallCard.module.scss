@@ -1,0 +1,49 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.smallCardActive,
+.smallCardInactive {
+  width: 100%;
+  background: linear-gradient(to bottom right, $dashboardPink, $dashboardCyan);
+  padding: 25px;
+  border-radius: 10px;
+  @include flex(row, space-between, center);
+  box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.25);
+  transform: scale(1);
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+
+  .smallCardDetails {
+    @include flex(column, flex-start, flex-start);
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyMontserrat, 14px, 400);
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0px;
+      color: $dashboardBlue;
+      @include font($fontFamilyMontserrat, 25px, 700);
+    }
+  }
+
+  img {
+    width: 50px;
+  }
+}
+.smallCardInactive {
+  background: white;
+
+  .smallCardDetails {
+    p {
+      color: #707070;
+    }
+  }
+}

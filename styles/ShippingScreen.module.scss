@@ -1,0 +1,111 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.shippingScreen {
+  width: 100%;
+
+  .shippingAddress {
+    width: 100%;
+    @include flex(row, center, flex-start);
+
+    &Details {
+      width: 45%;
+      padding: 25px;
+      @include flex(column, flex-start, flex-start);
+
+      h1 {
+        margin: 0px;
+        @include font($fontFamilyRoboto, 18px, 600);
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin: 0px;
+        @include font($fontFamilyPoppins, 13px, 500);
+        margin-bottom: 20px;
+      }
+
+      .noAddress {
+        width: 100%;
+        @include flex(column, flex-start, center);
+
+        p {
+          margin: 0px 0px 15px 0px;
+          @include font($fontFamilyPoppins, 15px, 500);
+        }
+
+        button {
+          @include button();
+          padding: 5px 15px;
+          font-size: 13px;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .availableAddress {
+        width: 100%;
+        @include flex(column, flex-start, center);
+
+        .continueBtn {
+          @include button();
+          padding: 5px 15px;
+          font-size: 13px;
+          background-color: $addToWishlistButtonColor;
+          color: white;
+          margin-top: 20px;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      @include screenTwo {
+        width: 55%;
+      }
+
+      @include screenTwoThree {
+        width: 100%;
+      }
+    }
+
+    .priceDetails {
+      width: 20%;
+      // background-color: yellow;
+      padding: 25px 15px;
+
+      @include screenTwo {
+        width: 25%;
+      }
+
+      @include screenTwoThree {
+        width: 100%;
+      }
+
+      @include screenThreeFour {
+        grid-row: 1;
+      }
+    }
+
+    @include screenTwoThree {
+      @include grid(20px);
+      grid-template-columns: 2fr 1fr;
+      padding: 10px 30px;
+      grid-gap: 0px;
+    }
+
+    @include screenThreeFour {
+      grid-template-columns: 1fr;
+    }
+
+    @include screenFour {
+      padding: 10px 20px;
+    }
+  }
+}

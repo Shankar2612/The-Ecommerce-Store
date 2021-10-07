@@ -1,0 +1,54 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.orderStatus {
+  width: 100%;
+  padding: 23px;
+  @include flex(row, center, center);
+  border-bottom: 1px solid $cartBackgroundColor;
+
+  a {
+    @include font($fontFamilyRoboto, 20px, 600);
+    letter-spacing: 1px;
+    margin-right: 35px;
+
+    @include screenThreeFour {
+      margin-right: 0px;
+    }
+  }
+
+  .status {
+    @include flex(row, flex-start, center);
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 12px, 600);
+      letter-spacing: 1.5px;
+      padding: 8px 0px;
+      margin-right: 10px;
+    }
+
+    span {
+      padding: 8px 0px;
+      margin: 0px;
+      margin-right: 10px;
+    }
+
+    .shippingStatusActive {
+      color: $addToWishlistButtonColor;
+      border-bottom: 3px solid $addToWishlistButtonColor;
+    }
+
+    &Tag {
+      @include flex(column, flex-start, center);
+
+      img {
+        width: 30px;
+      }
+    }
+
+    @include screenThreeFour {
+      display: none;
+    }
+  }
+}

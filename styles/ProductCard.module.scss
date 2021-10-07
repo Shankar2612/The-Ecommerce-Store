@@ -1,0 +1,132 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.productCard {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  box-shadow: 0px 0px 8px rgb(226, 226, 226);
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+
+  h3 {
+    margin: 0px;
+    @include font($fontFamilyRoboto, 17px, 600);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    margin-top: 12px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include screenFour {
+      font-size: 15.5px;
+    }
+  }
+
+  h4 {
+    margin: 0px;
+    @include font($fontFamilyPoppins, 14px, 400);
+    margin-bottom: 10px;
+
+    @include screenFour {
+      display: none;
+    }
+  }
+
+  .productImageHolder {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    @include flex(row, center, center);
+
+    .productImage {
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+  }
+
+  .starContainer {
+    margin-bottom: 10px;
+  }
+
+  .price {
+    @include flex(row, flex-start, center);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 16px, 500);
+      margin-right: 20px;
+
+      @include screenFour {
+        font-size: 14.5px;
+      }
+    }
+
+    .oldPrice {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 13px, 500);
+      text-decoration: line-through;
+      color: $oldPriceColor;
+
+      @include screenFour {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .cartAndWishlist {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    button {
+      // background-color: $addToCartButtonColor;
+      // border: none;
+      padding: 7px 0px;
+      // border-radius: 8px;
+      // transform: scale(1);
+      // transition: all 0.15s ease-in-out;
+      @include button();
+      @include font($fontFamilyPoppins, 13px, 500);
+      border-radius: 0px;
+
+      &:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+      }
+    }
+
+    .wishlist {
+      background-color: $addToWishlistButtonColor;
+      color: white;
+    }
+
+    @include screenOne {
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+  }
+
+  .discountCard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: $addToWishlistButtonColor;
+    padding: 8px 12px;
+    color: white;
+    @include font($fontFamilyPoppins, 14px, 600);
+    margin: 0px;
+  }
+
+  @include screenFour {
+    padding: 10px;
+  }
+}

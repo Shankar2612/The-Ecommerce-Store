@@ -1,0 +1,27 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.dashboardWeather {
+  width: 100%;
+  @include flex(row, flex-end, center);
+  margin-bottom: 20px;
+
+  img {
+    width: 40px;
+  }
+
+  .weatherDetails {
+    @include flex(column, flex-start, flex-start);
+    margin-left: 12px;
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyMontserrat, 13px, 500);
+    }
+
+    .degree {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 30px;
+  background-color: #d1d1d1;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.navbar ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar ul .menu:hover {
+  cursor: pointer;
+}
+
+.navbar ul .signin,
+.navbar ul .wishlist,
+.navbar ul .cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+
+.navbar ul .signin:hover,
+.navbar ul .wishlist:hover,
+.navbar ul .cart:hover {
+  cursor: pointer;
+}
+
+.navbar ul .signin img,
+.navbar ul .wishlist img,
+.navbar ul .cart img {
+  margin-right: 7px;
+}
+
+.navbar ul .signin p,
+.navbar ul .wishlist p,
+.navbar ul .cart p {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0px;
+}
+
+.navbar ul .logo {
+  margin-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar ul .searchbar {
+  background-color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 60px;
+  height: 35px;
+}
+
+.navbar ul .searchbar img:hover {
+  cursor: pointer;
+}
+
+.navbar ul .searchbar .searchInput {
+  border: none;
+  margin-right: 30px;
+  width: 300px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.navbar ul .searchbar .searchInput:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*# sourceMappingURL=Navbar.module.css.map */

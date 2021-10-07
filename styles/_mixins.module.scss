@@ -1,0 +1,78 @@
+@import "../styles/variables.module";
+
+@mixin font($family, $size, $weight) {
+  font: {
+    family: $family;
+    size: $size;
+    weight: $weight;
+  }
+}
+
+@mixin flex($flexDirection, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin button() {
+  background-color: $addToCartButtonColor;
+  border: none;
+  border-radius: 8px;
+  @include font($fontFamilyPoppins, 14px, 600);
+  transform: scale(1);
+  transition: all 0.15s ease-in-out;
+}
+
+@mixin grid($gap) {
+  display: grid;
+  grid-gap: 20px;
+}
+
+@mixin screenOne() {
+  @media only screen and (max-width: $screenOne) {
+    @content;
+  }
+}
+
+@mixin screenTwo() {
+  @media only screen and (max-width: $screenTwo) {
+    @content;
+  }
+}
+
+@mixin screenTwoTwoThree() {
+  @media only screen and (max-width: $screenTwoTwoThree) {
+    @content;
+  }
+}
+
+@mixin screenTwoThree() {
+  @media only screen and (max-width: $screenTwoThree) {
+    @content;
+  }
+}
+
+@mixin screenThree() {
+  @media only screen and (max-width: $screenThree) {
+    @content;
+  }
+}
+
+@mixin screenThreeFour() {
+  @media only screen and (max-width: $screenThreeFour) {
+    @content;
+  }
+}
+
+@mixin screenFour() {
+  @media only screen and (max-width: $screenFour) {
+    @content;
+  }
+}
+
+@mixin screenFive() {
+  @media only screen and (max-width: $screenFive) {
+    @content;
+  }
+}

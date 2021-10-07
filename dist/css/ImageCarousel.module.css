@@ -1,0 +1,14 @@
+.carouselContainer {
+  width: 100%;
+}
+
+.carouselContainer .carouselImg {
+  width: 100%;
+  height: 440px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=ImageCarousel.module.css.map */

@@ -1,0 +1,53 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.priceDetails {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+
+  h5 {
+    margin: 0px 0px 18px 0px;
+    text-transform: uppercase;
+    @include font($fontFamilyPoppins, 13px, 600);
+
+    span {
+      text-transform: none;
+    }
+  }
+
+  .totalPrice {
+    width: 100%;
+    margin-bottom: 13px;
+    @include flex(row, space-between, center);
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyRoboto, 13.5px, 300);
+      letter-spacing: 0.3px;
+      color: black;
+    }
+
+    .discount {
+      color: $addToWishlistButtonColor;
+    }
+  }
+
+  hr {
+    width: 100%;
+    height: 1.5px;
+    border: none;
+    background-color: $cartBackgroundColor;
+    margin-bottom: 13px;
+  }
+
+  .allTotalPrice {
+    width: 100%;
+    @include flex(row, space-between, center);
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyRoboto, 14.5px, 500);
+      letter-spacing: 0.3px;
+    }
+  }
+}

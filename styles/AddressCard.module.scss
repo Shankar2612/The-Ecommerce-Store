@@ -1,0 +1,64 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.addressCard {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid $cartBackgroundColor;
+  box-shadow: 0px 0px 4px $cartBackgroundColor;
+  @include flex(row, flex-start, flex-start);
+
+  .radio {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1.5px solid black;
+    box-shadow: 0px 0px 6px $cartBackgroundColor;
+    margin-right: 15px;
+  }
+
+  img {
+    width: 20px;
+    margin-right: 15px;
+  }
+
+  .addressInfo {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+
+    h4 {
+      margin: 0px 0px 15px 0px;
+      @include font($fontFamilyRoboto, 16px, 600);
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      margin: 0px 0px 15px 0px;
+      @include font($fontFamilyRoboto, 14px, 400);
+      letter-spacing: 0.3px;
+      color: $oldPriceColor;
+
+      span {
+        font-weight: 500;
+        font-size: 14.5px;
+        color: black;
+      }
+    }
+
+    button {
+      @include button();
+      padding: 4px 15px;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 9px $cartBackgroundColor;
+  }
+}

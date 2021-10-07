@@ -1,0 +1,88 @@
+@import "./variables.module";
+@import "./mixins.module";
+
+.orderCard {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  padding: 15px;
+  box-shadow: 0px 0px 7px $cartBackgroundColor;
+  margin-bottom: 30px;
+
+  .orderDelivered {
+    width: 100%;
+    @include flex(row, flex-start, center);
+    margin-bottom: 20px;
+
+    img {
+      width: 50px;
+    }
+
+    .deliveryStatus {
+      @include flex(column, flex-start, flex-start);
+      margin-left: 15px;
+
+      h3 {
+        margin: 0px 0px 0px 0px;
+        @include font($fontFamilyRoboto, 15px, 600);
+      }
+
+      p {
+        margin: 0px;
+        @include font($fontFamilyPoppins, 14px, 400);
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    background-color: $cartBackgroundColor;
+    border: none;
+    height: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  .orderDetails {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+
+    &ImgInfo {
+      width: 100%;
+      @include flex(row, flex-start, center);
+      margin-bottom: 15px;
+
+      img {
+        width: 20%;
+      }
+
+      .details {
+        margin-left: 30px;
+        @include flex(column, flex-start, flex-start);
+
+        h3 {
+          margin: 0px 0px 8px 0px;
+          @include font($fontFamilyRoboto, 15px, 600);
+        }
+
+        p {
+          margin: 0px 0px 2px 0px;
+          @include font($fontFamilyPoppins, 13px, 500);
+
+          span {
+            font-weight: 400;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    p {
+      margin: 0px 0px 10px 0px;
+      @include font($fontFamilyRoboto, 14px, 500);
+
+      span {
+        @include font($fontFamilyPoppins, 14px, 400);
+        margin-left: 8px;
+      }
+    }
+  }
+}

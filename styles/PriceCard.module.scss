@@ -1,0 +1,72 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.priceCardContainer {
+  width: 100%;
+  border-radius: 20px;
+  border: 1.5px solid $shadowColor;
+  height: fit-content;
+  padding: 8px 15px;
+  @include flex(column, flex-start, flex-start);
+
+  .price {
+    @include flex(row, flex-start, center);
+    margin-bottom: 20px;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+    p {
+      margin: 0px;
+      color: white;
+      @include font($fontFamilyPoppins, 19px, 500);
+    }
+  }
+
+  .address {
+    width: 100%;
+    @include flex(row, flex-start, flex-start);
+    margin-bottom: 15px;
+
+    p {
+      margin: 0px;
+      margin-left: 15px;
+      @include font($fontFamilyPoppins, 15px, 500);
+    }
+  }
+
+  hr {
+    width: 100%;
+    height: 1.5px;
+    border: none;
+    border-radius: 20px;
+    background-color: $navbarColor;
+  }
+
+  .buyNow {
+    width: 100%;
+    @include flex(row, center, center);
+
+    button {
+      @include button();
+      padding: 8px 20px;
+      //   background-color: $addToCartButtonColor;
+      //   color: black;
+      //   @include font($fontFamilyPoppins, 16px, 600);
+      //   border-radius: 10px;
+      //   border: none;
+      margin: 8px 0px;
+      //   transform: scale(1);
+      //   transition: all 0.15s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @include screenTwo {
+    display: none;
+  }
+}

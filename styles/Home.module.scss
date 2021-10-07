@@ -1,0 +1,27 @@
+@import "_mixins.module.scss";
+@import "_variables.module.scss";
+
+.mainContainer {
+  padding: 35px 45px;
+  margin-top: 80px;
+
+  .spacebtwelements {
+    margin-bottom: 20px;
+  }
+
+  @include screenOne {
+    padding: 30px 38px;
+  }
+
+  @include screenThree {
+    padding: 25px;
+  }
+
+  @include screenFour {
+    padding: 15px;
+  }
+
+  @include screenFive {
+    padding: 15px 8px;
+  }
+}

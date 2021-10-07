@@ -1,0 +1,48 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.categoryCard {
+  width: 100%;
+  margin-bottom: 35px;
+
+  h1 {
+    @include font($fontFamilyDMSerifDisplay, 30px, 500);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @include screenFour {
+      font-size: 25px;
+    }
+  }
+
+  .productCardContainer {
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 35px;
+
+    @include screenOne {
+      grid-gap: 20px;
+      padding: 15px 23px;
+    }
+
+    @include screenTwo {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include screenThree {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include screenFour {
+      grid-column-gap: 13px;
+      grid-row-gap: 20px;
+      padding: 15px 0px;
+    }
+
+    @include screenFive {
+      grid-column-gap: 6px;
+    }
+  }
+}

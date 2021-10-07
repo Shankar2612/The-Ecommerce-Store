@@ -1,0 +1,34 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.signInReminderContainer {
+  width: 100%;
+  padding: 20px 0px;
+  @include flex(column, center, center);
+
+  p {
+    margin: 0px;
+    @include font($fontFamilyPoppins, 18px, 500);
+    width: 23%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  a {
+    @include button();
+    color: white;
+    padding: 6px 14px;
+    background-color: black;
+    // border: none;
+    // border-radius: 5px;
+    @include font($fontFamilyPoppins, 14px, 500);
+    // color: white;
+    // transform: scale(1);
+    // transition: all 0.15s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}

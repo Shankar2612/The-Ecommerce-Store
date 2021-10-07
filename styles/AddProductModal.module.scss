@@ -1,0 +1,182 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.productModal {
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  padding: 25px;
+  @include flex(column, flex-start, flex-start);
+  background-color: white;
+
+  .modalHeading {
+    width: 100%;
+    @include flex(row, space-between, center);
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0px;
+      @include font($fontFamilyMontserrat, 17px, 600);
+    }
+
+    img {
+      width: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modalContainer {
+    width: 100%;
+    @include grid(20px);
+    grid-gap: 25px;
+    grid-template-columns: 1.5fr 2.5fr;
+    align-items: flex-start;
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .modalImgDiv {
+      width: 100%;
+      @include flex(column, flex-start, center);
+
+      input {
+        width: 80%;
+        border: none;
+        background-color: $cartBackgroundColor;
+        @include font($fontFamilyMontserrat, 12.5px, 400);
+        padding: 6px 10px;
+        margin-bottom: 20px;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      .img {
+        width: 100%;
+        height: 200px;
+        background-color: $cartBackgroundColor;
+        margin-bottom: 25px;
+      }
+
+      button {
+        @include button();
+        padding: 5px 15px;
+        font-size: 13px;
+        // font-weight: 500;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .modalInfoDiv {
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+
+      h4 {
+        @include font($fontFamilyMontserrat, 14px, 600);
+        margin: 0px 0px 8px 0px;
+      }
+
+      input {
+        width: 50%;
+        border: none;
+        background-color: $cartBackgroundColor;
+        @include font($fontFamilyMontserrat, 12.5px, 400);
+        padding: 6px 10px;
+        margin-bottom: 20px;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
+      .twoFields {
+        width: 100%;
+        @include grid(20px);
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+
+        .field {
+          width: 100%;
+          @include flex(column, flex-start, flex-start);
+
+          select {
+            width: 100%;
+            border: none;
+            background-color: $cartBackgroundColor;
+            @include font($fontFamilyMontserrat, 12.5px, 400);
+            padding: 6px 10px;
+            margin-bottom: 20px;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+
+            option {
+              background-color: white;
+            }
+          }
+        }
+      }
+
+      .fields {
+        width: 100%;
+        @include flex(column, flex-start, flex-start);
+      }
+
+      .longDescription {
+        width: 100%;
+        @include flex(row, space-between, center);
+        // margin-bottom: 20px;
+
+        .actionsDiv {
+          margin-left: 10px;
+          @include flex(row, flex-start, center);
+
+          img {
+            width: 22px;
+            margin-left: 10px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      button {
+        @include button();
+        padding: 6px 16px;
+        font-size: 13.5px;
+        margin: 10px 0px 0px auto;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}

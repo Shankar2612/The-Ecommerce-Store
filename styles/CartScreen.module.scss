@@ -1,0 +1,156 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.cartContainer {
+  padding: 30px;
+  @include grid(30px);
+  grid-template-columns: 3fr 1fr;
+  background-color: $cartBackgroundColor;
+  min-height: 100vh;
+
+  .cartDetails {
+    background-color: white;
+    height: fit-content;
+    width: 100%;
+    padding: 25px 35px;
+
+    .emptyCart {
+      width: 100%;
+      @include flex(column, flex-start, center);
+
+      p {
+        margin: 0px 0px 20px 0px;
+        @include font($fontFamilyPoppins, 17px, 500);
+
+        @include screenThreeFour {
+          font-size: 15.5px;
+          margin-bottom: 13px;
+        }
+      }
+    }
+
+    h1 {
+      @include font($fontFamilyRoboto, 24px, 700);
+      letter-spacing: 0.5px;
+      margin: 0px;
+      margin-bottom: 20px;
+
+      @include screenThreeFour {
+        font-size: 20px;
+      }
+    }
+
+    hr {
+      width: 100%;
+      background-color: $cartBackgroundColor;
+      border: none;
+      height: 2px;
+    }
+
+    .subtotal {
+      width: 100%;
+      @include flex(row, flex-end, center);
+
+      p {
+        @include font($fontFamilyPoppins, 17px, 400);
+        margin: 0px 0px 20px 0px;
+        span {
+          font-weight: 600;
+          font-size: 19px;
+          letter-spacing: 0.5px;
+
+          @include screenThreeFour {
+            font-size: 17px;
+          }
+        }
+
+        @include screenThreeFour {
+          font-size: 15.5px;
+          margin-bottom: 15px;
+        }
+      }
+
+      a {
+        @include button();
+        font-weight: 600;
+        font-size: 14px;
+        padding: 8px 20px;
+        // margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        margin: 0px 0px 8px auto;
+        display: none;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+
+        @include screenTwo {
+          display: block;
+        }
+      }
+    }
+
+    @include screenOne {
+      padding: 25px;
+    }
+  }
+
+  .cartSubtotal {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+    border-radius: 0px;
+    background-color: white;
+    height: fit-content;
+    padding: 30px 15px 20px 15px;
+
+    p {
+      @include font($fontFamilyPoppins, 17px, 400);
+      margin: 0px 0px 20px 0px;
+      span {
+        font-weight: 600;
+        font-size: 19px;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    a {
+      @include button();
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 20px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      margin: 0px auto;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+
+    @include screenTwo {
+      display: none;
+    }
+  }
+
+  @include screenTwo {
+    grid-template-columns: 1fr;
+  }
+}
+
+.emptyCart {
+  a {
+    @include button();
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}

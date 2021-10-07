@@ -1,0 +1,118 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.login {
+  width: 100%;
+  @include flex(column, flex-start, center);
+  min-height: 100vh;
+  padding: 30px;
+  background-color: $cartBackgroundColor;
+
+  a {
+    @include font($fontFamilyRoboto, 20px, 600);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .loginCard {
+    width: 330px;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgb(191, 191, 191);
+    padding: 25px;
+
+    h1 {
+      @include font($fontFamilyPoppins, 23px, 600);
+      letter-spacing: 0.5px;
+      margin: 0px 0px 15px 0px;
+
+      @include screenThreeFour {
+        font-size: 20px;
+      }
+    }
+
+    hr {
+      width: 100%;
+      height: 2px;
+      background-color: $cartBackgroundColor;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .signinContainer {
+      width: 100%;
+      @include flex(column, flex-start, center);
+
+      img {
+        width: 90px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin: 0px;
+        @include font($fontFamilyPoppins, 17px, 500);
+        margin-bottom: 10px;
+
+        @include screenThreeFour {
+          font-size: 15.5px;
+        }
+      }
+
+      .email {
+        width: 100%;
+        @include font($fontFamilyPoppins, 15px, 600);
+        margin: 0px 0px 8px 0px;
+
+        @include screenThreeFour {
+          font-size: 14px;
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 2px solid $cartBackgroundColor;
+        @include font($fontFamilyPoppins, 14px, 400);
+        margin-bottom: 20px;
+
+        @include screenThreeFour {
+          font-size: 13.5px;
+        }
+      }
+
+      button {
+        @include button();
+        font-size: 15px;
+        width: 100%;
+        padding: 10px 0px;
+        margin-bottom: 25px;
+
+        &:hover {
+          cursor: pointer;
+          //   transform: scale(1.05);
+        }
+      }
+    }
+
+    p {
+      margin: 0px;
+      @include font($fontFamilyPoppins, 15px, 400);
+
+      a {
+        @include font($fontFamilyPoppins, 15px, 500);
+        color: $addToWishlistButtonColor;
+        margin-left: 8px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      @include screenThreeFour {
+        font-size: 14px;
+      }
+    }
+  }
+}

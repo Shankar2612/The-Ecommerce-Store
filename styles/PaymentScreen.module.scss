@@ -1,0 +1,96 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.paymentScreen {
+  width: 100%;
+
+  .paymentDiv {
+    width: 100%;
+    @include flex(row, center, flex-start);
+
+    .paymentMethods {
+      width: 55%;
+      padding: 25px;
+      @include flex(column, flex-start, flex-start);
+
+      h1 {
+        width: 100%;
+        margin: 0px;
+        @include font($fontFamilyRoboto, 18px, 600);
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+      }
+
+      .productDetailsHeading {
+        margin-top: 40px;
+        margin-bottom: 0px;
+      }
+
+      .shoppingCartCard {
+        @include screenTwo {
+          display: none;
+        }
+      }
+
+      .shoppingCartCardTwo {
+        display: block;
+      }
+
+      @include screenOne {
+        width: 65%;
+      }
+
+      // @include screenTwoThree {
+      //   width: 60%;
+      // }
+
+      @include screenThreeFour {
+        width: 100%;
+      }
+    }
+
+    .priceCard {
+      width: 20%;
+      padding: 25px 15px;
+      @include flex(column, flex-start, center);
+
+      .paymentNotAllowed {
+        @include font($fontFamilyMontserrat, 13px, 400);
+        color: red;
+      }
+
+      button {
+        @include button();
+        padding: 6px 0px;
+        width: 100%;
+        margin-top: 20px;
+        background-color: $addToWishlistButtonColor;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+      }
+
+      @include screenTwoThree {
+        width: 30%;
+      }
+
+      @include screenThreeFour {
+        width: 100%;
+      }
+    }
+
+    @include screenThreeFour {
+      padding: 10px 20px;
+      @include grid(20px);
+      grid-template-columns: 1fr;
+      grid-gap: 0px;
+    }
+
+    @include screenThreeFour {
+      padding: 10px;
+    }
+  }
+}

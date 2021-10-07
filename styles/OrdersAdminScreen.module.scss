@@ -1,0 +1,87 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.ordersPage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20%;
+
+  &Main {
+    width: 100%;
+
+    .dashboardArea {
+      width: 100%;
+      padding: 15px 30px;
+      margin-top: 60px;
+
+      .ordersHeadingSearch {
+        width: 100%;
+        @include flex(row, space-between, flex-start);
+        margin-bottom: 20px;
+
+        h2 {
+          @include font($fontFamilyMontserrat, 17px, 600);
+          margin: 0px;
+        }
+
+        .ordersSearch {
+          @include flex(row, space-between, center);
+          padding: 7px 12px;
+          //   border-radius: 20px;
+          border: 1px solid grey;
+          border-radius: 20px;
+
+          input {
+            width: 200px;
+            border: none;
+            @include font($fontFamilyMontserrat, 12.5px, 400);
+
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+          }
+
+          img {
+            width: 15px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .ordersTable {
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.25);
+        min-height: 400px;
+
+        table {
+          width: 100%;
+
+          .noOrderFound {
+            width: 100%;
+            @include font($fontFamilyMontserrat, 15px, 600);
+            text-align: center;
+            margin: 20px 0px;
+          }
+
+          th {
+            padding: 8px 0px;
+            text-align: center;
+            @include font($fontFamilyMontserrat, 14px, 600);
+          }
+
+          td {
+            padding: 5px 0px;
+            text-align: center;
+            @include font($fontFamilyMontserrat, 13px, 400);
+          }
+        }
+      }
+    }
+  }
+}

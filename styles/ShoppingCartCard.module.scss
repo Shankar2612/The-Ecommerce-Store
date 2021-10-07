@@ -1,0 +1,83 @@
+@import "../styles/mixins.module";
+@import "../styles/variables.module";
+
+.cartCard {
+  //   box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  //   border-collapse: collapse;
+  //   border: 1px solid $cartBackgroundColor;
+
+  tr {
+    th {
+      @include font($fontFamilyPoppins, 16px, 600);
+      letter-spacing: 0.3px;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 2px solid $cartBackgroundColor;
+    }
+
+    // th:nth-child(odd) {
+    //   background-color: $cartBackgroundColor;
+    // }
+
+    .price,
+    .quantity,
+    .totalPrice {
+      text-align: center;
+    }
+
+    .name,
+    .totalPrice {
+      font-weight: 500;
+
+      a {
+        background-color: transparent;
+        padding: 0px;
+      }
+    }
+
+    .quantity {
+      .select {
+        width: 50px;
+        border: 1px solid $shadowColor;
+        padding: 5px 8px;
+        border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    td {
+      padding: 10px;
+      //   @include flex(column, center, center);
+
+      img {
+        width: 120px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      button {
+        @include button();
+        padding: 6px 10px;
+        background-color: $addToWishlistButtonColor;
+        color: white;
+        font-weight: 500;
+
+        &:hover {
+          transform: scale(1.05);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include screenTwo {
+    display: none;
+  }
+}

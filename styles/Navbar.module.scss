@@ -1,0 +1,251 @@
+@import "./variables.module";
+@import "./mixins.module";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: $navbarColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0px 3px 5px #003a5f;
+  color: #fff5b7;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    height: fit-content;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .username {
+        display: flex;
+        @include flex(row, space-between, center);
+        margin-right: 30px;
+
+        // &:hover {
+        //   cursor: pointer;
+        // }
+
+        img {
+          margin-right: 7px;
+        }
+
+        p {
+          @include font($fontFamilyPoppins, 15px, 500);
+          letter-spacing: 0.5px;
+          margin: 0px;
+
+          @include screenTwoThree {
+            display: none;
+          }
+        }
+
+        @include screenTwoThree {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .menu {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .signin,
+    .wishlist,
+    .cart,
+    .search {
+      display: flex;
+      @include flex(row, space-between, center);
+      margin-right: 30px;
+
+      .badgeContainer {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+
+        .badge {
+          position: absolute;
+          top: -24%;
+          right: -15%;
+          border-radius: 50%;
+          background-color: $addToWishlistButtonColor;
+          border: none;
+          width: 17px;
+          height: 17px;
+          @include flex(row, center, center);
+          color: white;
+          @include font($fontFamilyPoppins, 12px, 600);
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        margin-right: 7px;
+        width: 25px;
+      }
+
+      p {
+        @include font($fontFamilyPoppins, 15px, 500);
+        letter-spacing: 0.5px;
+        margin: 0px;
+
+        @include screenTwoThree {
+          display: none;
+        }
+      }
+
+      @include screenTwoThree {
+        margin-right: 5px;
+      }
+    }
+
+    .search {
+      display: none;
+      margin-right: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        display: none;
+      }
+
+      @include screenThree {
+        display: block;
+
+        svg {
+          display: block;
+        }
+      }
+    }
+
+    .logo {
+      margin-left: 25px;
+      @include font($fontFamilyRoboto, 20px, 600);
+      letter-spacing: 1px;
+    }
+
+    .searchbar {
+      background-color: white;
+      padding: 6px 12px;
+      border-radius: 200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 60px;
+      height: 35px;
+
+      img {
+        &:hover {
+          cursor: pointer;
+        }
+
+        // @include screenThree {
+        //   width: 18px;
+        // }
+      }
+
+      .searchInput {
+        border: none;
+        margin-right: 30px;
+        width: 300px;
+        @include font($fontFamilyPoppins, 15px, 400);
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+
+        // @include screenThree {
+        //   display: none;
+        // }
+      }
+
+      @include screenOne {
+        margin-left: 30px;
+      }
+
+      @include screenTwo {
+        .searchInput {
+          width: 200px;
+        }
+      }
+
+      @include screenThree {
+        display: none;
+      }
+    }
+  }
+
+  .tinySearchBar {
+    position: absolute;
+    top: 110%;
+    width: 50%;
+    // height: 30px;
+    padding: 8px 12px;
+    background-color: white;
+    z-index: 8;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flex(row, space-between, center);
+    border-radius: 20px;
+    box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: 0.2);
+    display: none;
+
+    img {
+      width: 25px;
+      margin-left: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+
+      // @include screenThree {
+      //   width: 18px;
+      // }
+    }
+
+    .searchInput {
+      border: none;
+      margin-right: 30px;
+      width: 80%;
+      @include font($fontFamilyPoppins, 15px, 400);
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      @include screenThree {
+        font-size: 13px;
+      }
+    }
+
+    @include screenThree {
+      display: flex;
+    }
+
+    @include screenFour {
+      width: 70%;
+    }
+  }
+
+  @include screenOne {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,42 @@
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: #d1d1d1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer a {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer .line {
+  width: 2.5px;
+  background-color: black;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 50px;
+}
+
+.footer p {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=Footer.module.css.map */
