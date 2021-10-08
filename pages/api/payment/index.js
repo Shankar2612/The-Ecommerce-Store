@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 
 export default app.post("/api/payment", (req, res) => {
-    console.log((req.body.amount*100).toFixed(0));
+    // console.log((req.body.amount*100).toFixed(0));
     let instance = new Razorpay({
         key_id: process.env.RAZORPAY_KEY_ID,
         key_secret: process.env.RAZORPAY_KEY_SECRET,

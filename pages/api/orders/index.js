@@ -2,10 +2,11 @@ import express from "express";
 import Order from "../../../models/Order";
 import mongoose from "mongoose";
 import { isAuth } from "../../../utils/auth";
+require("dotenv").config();
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 app.use(isAuth);
 

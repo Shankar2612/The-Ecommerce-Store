@@ -5,7 +5,7 @@ import data from "../../utils/data";
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 export default app.get("/api/addAddress", async (req, res) => {
     await Address.find({}, async function(err, docs) {

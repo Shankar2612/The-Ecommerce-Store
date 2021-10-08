@@ -4,18 +4,19 @@ import mongoose from "mongoose";
 import express from "express";
 import User from "../../models/User";
 import data from "../../utils/data";
+require("dotenv").config();
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
-export default app.get("/api/addUser", async (req, res) => {
-  await User.find({}, async function(err, docs) {
+export default app.get("/api/addUser", (req, res) => {
+  User.find({}, function(err, docs) {
     if(err) {
       console.log(err); 
     }else {
       if(docs.length === 0) {
-        await User.insertMany(data.users, function(err, doc) {
+        User.insertMany(data.users, function(err, doc) {
           if(err) {
             console.log("Error", err); 
           }else {

@@ -1,10 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import Address from "../../../models/Address";
+require("dotenv").config();
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 export default app.post("/api/address", async (req,res) => {
     const {name, mobile, address, locality, pincode, district, state, country, city} = req.body;

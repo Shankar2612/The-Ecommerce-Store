@@ -7,7 +7,7 @@ const app = express();
 export default app.post("/api/searchOrder", async (req,res) => {
 
     const order = await Order.find({orderID: req.body.orderID}).lean();
-    console.log(order);
+    // console.log(order);
 
     if(order.length !== 0) {
         res.json({message: "Order Found", data: order});

@@ -4,9 +4,11 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 // import { signToken } from "../../../utils/auth";
 
+require("dotenv").config();
+
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 export default app.post("/api/users/register", async (req,res) => {
     User.create({name: req.body.name, email: req.body.email, password: bcrypt.hashSync(req.body.password), admin: false})

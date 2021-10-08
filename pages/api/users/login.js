@@ -3,10 +3,12 @@ import User from "../../../models/User";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import { signToken } from "../../../utils/auth";
+require("dotenv").config();
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/webshopDB", {useNewUrlParser: true});
+
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 export default app.post("/api/users/login", async (req,res) => {
     const user = await User.findOne({email: req.body.email});
