@@ -105,9 +105,9 @@ function Home(props) {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 export async function getServerSideProps() {
-  await db.connect();
-  const product = await Product.find({}).lean();
-  await db.disconnect();
+  // await db.connect();
+  // const product = await Product.find({}).lean();
+  // await db.disconnect();
 
   return {
     props: {
