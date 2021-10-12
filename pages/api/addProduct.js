@@ -1,39 +1,16 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-import mongoose from "mongoose";
-import express from "express";
+import nc from "next-connect";
 import Product from "../../models/Product";
 import data from "../../utils/data";
-require("dotenv").config();
+import db from "../../utils/db";
 
-const app = express();
+const handler = nc();
 
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
-
-// mongoose.connect(`${process.env.MONGODB_URL}/webshopDB`, {useNewUrlParser: true});
-
-export default app.get("/api/addProduct", async (req, res) => {
-  Product.find({}, async function(err, docs) {
-    if(err) {
-      console.log(err); 
-    }else {
-      if(docs.length === 0) {
-        Product.insertMany(data.products, function(err, doc) {
-          if(err) {
-            console.log("Error", err); 
-          }else {
-            console.log("Data", doc);
-          }
-        });
-        res.send({message: "added data"});
-        res.redirect("/api/addProduct");
-      } else {
-        res.send(docs);
-      }
-    }
-  });
-  // const products = await Product.insertMany(data.products);
-  // res.json({data: products});
+handler.get(async (req,res) => {
+  await db.connect();
+  await Product.deleteMany();
+  await Product.insertMany(data.products);
+  await db.disconnect();
+  res.send({message: "Added products successfully"});
 })
 
-
+export default handler;
