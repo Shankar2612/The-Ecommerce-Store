@@ -87,7 +87,7 @@ function LoginScreen({onUserLogin, userInfo}) {
     return (
         <div>
             <Head>
-                <title>React Webshop: Sign In</title>
+                <title>The Ecom Store: Sign In</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

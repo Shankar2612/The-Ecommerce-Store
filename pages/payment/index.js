@@ -123,6 +123,7 @@ function PaymentScreen(props) {
                                         Cookies.remove("userAddress");
                                         Cookies.remove("orderID");
                                         Cookies.set("orderID", JSON.stringify(res.data.order.orderID));
+                                        window.location.reload();
                                     } else {
                                         consle.log("Not modified Stock");
                                         router.push(`/payment/${res.data.order.orderID}`);
@@ -130,6 +131,7 @@ function PaymentScreen(props) {
                                         Cookies.remove("userAddress");
                                         Cookies.remove("orderID");
                                         Cookies.set("orderID", JSON.stringify(res.data.order.orderID));
+                                        window.location.reload();
                                     }
                                 })
                                 .catch(err => console.log(err))                                
@@ -176,7 +178,7 @@ function PaymentScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: PAYMENT</title>
+                <title>The Ecom Store: PAYMENT</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

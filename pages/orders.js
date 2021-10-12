@@ -69,7 +69,7 @@ function OrdersScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: Orders</title>
+                <title>The Ecom Store: Orders</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

@@ -69,7 +69,7 @@ function SearchScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: {router.query.s}</title>
+                <title>The Ecom Store: {router.query.s}</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

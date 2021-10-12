@@ -26,7 +26,7 @@ function CartScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop | Shopping Cart</title>
+                <title>The Ecom Store | Shopping Cart</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

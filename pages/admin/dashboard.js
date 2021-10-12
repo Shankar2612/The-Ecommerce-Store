@@ -65,7 +65,7 @@ function DashboardScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: ADMIN DASHBOARD</title>
+                <title>The Ecom Store: ADMIN DASHBOARD</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

@@ -19,7 +19,7 @@ export default function PaymentSuccess(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: PAYMENT SUCCESS</title>
+                <title>The Ecom Store: PAYMENT SUCCESS</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

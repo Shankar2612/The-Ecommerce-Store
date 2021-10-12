@@ -67,7 +67,7 @@ function ShippingScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: ADDRESS</title>
+                <title>The Ecom Store: ADDRESS</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

@@ -69,7 +69,7 @@ function CustomersAdminScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: ADMIN CUSTOMERS</title>
+                <title>The Ecom Store: ADMIN CUSTOMERS</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

@@ -92,7 +92,7 @@ function ProductsAdminScreen(props) {
     return (
         <div>
             <Head>
-                <title>React Webshop: ADMIN PRODUCTS</title>
+                <title>The Ecom Store: ADMIN PRODUCTS</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

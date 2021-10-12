@@ -89,7 +89,7 @@ function RegisterScreen({userInfo}) {
     return (
         <div>
             <Head>
-            <title>React Webshop: Register</title>
+            <title>The Ecom Store: Register</title>
 
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

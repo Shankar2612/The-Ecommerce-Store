@@ -59,7 +59,7 @@ function ProductScreen(props) {
         <>
         <div>
             <Head>
-                <title>React Webshop: {product.name}</title>
+                <title>The Ecom Store: {product.name}</title>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
