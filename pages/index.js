@@ -14,6 +14,7 @@ import {connect} from "react-redux"
 import Product from '../models/Product'
 import convertDocToObj from '../utils/docToObj'
 import Cookies from "js-cookie"
+import db from "../utils/db"
 
 const mapStateToProps = (state) => {
   return {
@@ -104,8 +105,9 @@ function Home(props) {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 export async function getServerSideProps() {
-
+  await db.connect();
   const product = await Product.find({}).lean();
+  await db.disconnect();
 
   return {
     props: {
