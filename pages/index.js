@@ -104,14 +104,14 @@ function Home(props) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
-export async function getServerSideProps() {
-  await db.connect();
-  const product = await Product.find({}).lean();
-  await db.disconnect();
+// export async function getServerSideProps() {
+//   await db.connect();
+//   const product = await Product.find({}).lean();
+//   await db.disconnect();
 
-  return {
-    props: {
-        product: product.map(eachProduct => convertDocToObj(eachProduct)),
-    },
-  };
-}
+//   return {
+//     props: {
+//         product: product.map(eachProduct => convertDocToObj(eachProduct)),
+//     },
+//   };
+// }
