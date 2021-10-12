@@ -1,16 +1,35 @@
-import nc from "next-connect";
+import express from "express";
 import Product from "../../models/Product";
 import data from "../../utils/data";
-import db from "../../utils/db";
+import mongoose from "mongoose";
+require("dotenv").config();
 
-const handler = nc();
+const app = express();
 
-handler.get(async (req,res) => {
-  await db.connect();
-  await Product.deleteMany();
-  await Product.insertMany(data.products);
-  await db.disconnect();
-  res.send({message: "Added products successfully"});
+mongoose.connect(process.env.MONGODB_URL, 
+  {
+    useNewUrlParser:true
 })
 
-export default handler;
+export default app.get("/api/addProduct", (req,res) => {
+  Product.find({}, function(err, docs) {
+    if(err) {
+      console.log(err); 
+      res.send({"error": err});
+    }else {
+      if(docs.length === 0) {
+        Product.insertMany(data.products, function(err, doc) {
+          if(err) {
+            console.log("Error", err); 
+          }else {
+            console.log("Data", doc);
+          }
+        });
+        res.send({message: "products added!!"});
+        res.redirect("/api/addProduct");
+      } else {
+        res.send(docs);
+      }
+    }
+  });
+})

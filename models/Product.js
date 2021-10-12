@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-// mongoose.models = [];
+mongoose.models = [];
 
 const Product = mongoose.models.Product || new mongoose.model("Product", productSchema);
 

@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
+// mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 export default app.get("/api/addUser", (req, res) => {
   User.find({}, function(err, docs) {
