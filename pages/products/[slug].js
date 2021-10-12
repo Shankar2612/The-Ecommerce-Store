@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch) => {
 
 
 function ProductScreen(props) {
-    
+
     const [quantity, setQuantity] = useState(1);
     const [sideBar, setSideBar] = useState("none");
     const {product, cart, onAddToCart} = props;
@@ -133,7 +133,8 @@ export async function getServerSideProps(context) {
 
     const product = await Product.findOne({ name: slug }).lean();
     let address = null;
-    if(cookie.parse(context.req.headers.cookie).userInfo) {
+    // console.log(context.req.headers.cookie);
+    if(context.req.headers.cookie) {
         address = await Address.findOne({ name: JSON.parse(cookie.parse(context.req.headers.cookie).userInfo).user.name }).lean();
     } 
 
