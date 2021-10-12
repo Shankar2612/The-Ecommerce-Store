@@ -26,7 +26,6 @@ export default app.get("/api/addProduct", (req,res) => {
           }
         });
         res.send({message: "products added!!"});
-        res.redirect("/api/addProduct");
       } else {
         res.send(docs);
       }
