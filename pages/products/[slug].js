@@ -35,6 +35,8 @@ const mapDispatchToProps = (dispatch) => {
 
 
 function ProductScreen(props) {
+    console.log(props.product);
+    console.log(props.address);
 
     const [quantity, setQuantity] = useState(1);
     const [sideBar, setSideBar] = useState("none");
