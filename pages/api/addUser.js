@@ -24,7 +24,6 @@ export default app.get("/api/addUser", (req, res) => {
           }
         });
         res.send({message: "users added!!"});
-        res.redirect("/api/addUser");
       } else {
         res.send(docs);
       }
