@@ -15,6 +15,8 @@ import convertDocToObj from '../utils/docToObj'
 import Cookies from "js-cookie"
 import Product from "../models/Product"
 import axios from "axios"
+import CircularProgress from '@mui/material/CircularProgress';
+import Stack from '@mui/material/Stack'
 
 const mapStateToProps = (state) => {
   return {
@@ -46,13 +48,19 @@ function Home(props) {
   const [alertMessage, setAlertMessage] = useState("");
   const [severity, setSeverity] = useState("success");
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
+    setLoading(true);
     axios.get("/api/getProducts")
     .then(res => {
       setProducts(res.data);
+      setLoading(false);
     })
-    .then(err => console.log(err))
+    .then(err => {
+      console.log(err);
+      setLoading(false);
+    })
   }, [])
 
   const handleSidebar = () => {
@@ -95,11 +103,19 @@ function Home(props) {
           <div className={styles.mainContainer}>
             <Carousel />
             <div className={styles.spacebtwelements}></div>
-            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Electronics"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Computers and Hardwares"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Men Fashion"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Women Fashion"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Kid Fashion"} />
+            {loading 
+            ? <div style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Stack sx={{ color: 'red' }} style={{marginTop: 20,}} spacing={2} direction="row">
+                  <CircularProgress size={30} color="inherit" />
+                </Stack>
+            </div>
+            : <div>
+              <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Electronics"} />
+              <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Computers and Hardwares"} />
+              <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Men Fashion"} />
+              <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Women Fashion"} />
+              <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Kid Fashion"} />
+            </div>}
             <div className={styles.spacebtwelements}></div>
             {props.userInfo ? null : <SignInReminder />}
           </div>
