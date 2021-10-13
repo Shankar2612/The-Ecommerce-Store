@@ -11,9 +11,7 @@ import BlackScreen from '../components/BlackScreen'
 import AlertComponent from '../components/AlertComponent'
 import {setCart, userLogout} from "../utils/actions"
 import {connect} from "react-redux"
-import convertDocToObj from '../utils/docToObj'
 import Cookies from "js-cookie"
-import Product from "../models/Product"
 import axios from "axios"
 import CircularProgress from '@mui/material/CircularProgress';
 import Stack from '@mui/material/Stack'
