@@ -14,6 +14,7 @@ import {connect} from "react-redux"
 import convertDocToObj from '../utils/docToObj'
 import Cookies from "js-cookie"
 import Product from "../models/Product"
+import axios from "axios"
 
 const mapStateToProps = (state) => {
   return {
@@ -44,6 +45,15 @@ function Home(props) {
   const [alert, setAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [severity, setSeverity] = useState("success");
+  const [products, setProducts] = useState([]);
+
+  useEffect(async () => {
+    axios.get("/api/getProducts")
+    .then(res => {
+      setProducts(res.data);
+    })
+    .then(err => console.log(err))
+  }, [])
 
   const handleSidebar = () => {
     if(sideBar === "none") {
@@ -85,11 +95,11 @@ function Home(props) {
           <div className={styles.mainContainer}>
             <Carousel />
             <div className={styles.spacebtwelements}></div>
-            <CategoryCard onAddToCart={props.onAddToCart} products={props.product} category={"Electronics"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={props.product} category={"Computers and Hardwares"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={props.product} category={"Men Fashion"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={props.product} category={"Women Fashion"} />
-            <CategoryCard onAddToCart={props.onAddToCart} products={props.product} category={"Kid Fashion"} />
+            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Electronics"} />
+            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Computers and Hardwares"} />
+            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Men Fashion"} />
+            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Women Fashion"} />
+            <CategoryCard onAddToCart={props.onAddToCart} products={products} category={"Kid Fashion"} />
             <div className={styles.spacebtwelements}></div>
             {props.userInfo ? null : <SignInReminder />}
           </div>
@@ -103,14 +113,14 @@ function Home(props) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
-export async function getServerSideProps() {
+// export async function getServerSideProps() {
 
-  const products = await Product.find({}).lean();
-  console.log(products);
+//   const products = await Product.find({}).lean();
+//   console.log(products);
 
-  return {
-    props: {
-        product: products.map(eachProduct => convertDocToObj(eachProduct))
-    },
-  };
-}
+//   return {
+//     props: {
+//         product: products.map(eachProduct => convertDocToObj(eachProduct))
+//     },
+//   };
+// }
