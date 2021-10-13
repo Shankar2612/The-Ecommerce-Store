@@ -27,7 +27,7 @@ const orderSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-mongoose.models = [];
+// mongoose.models = [];
 
 const Order = mongoose.models.Order || new mongoose.model("Order", orderSchema);
 

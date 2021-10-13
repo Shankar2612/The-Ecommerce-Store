@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-mongoose.models = [];
+// mongoose.models = [];
 
 const User = mongoose.models.User || new mongoose.model("User", userSchema);
 

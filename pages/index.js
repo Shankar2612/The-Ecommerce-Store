@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import styles from "../styles/Home.module.scss"
@@ -11,9 +11,9 @@ import BlackScreen from '../components/BlackScreen'
 import AlertComponent from '../components/AlertComponent'
 import {setCart, userLogout} from "../utils/actions"
 import {connect} from "react-redux"
-import Product from '../models/Product'
 import convertDocToObj from '../utils/docToObj'
 import Cookies from "js-cookie"
+import Product from "../models/Product"
 
 const mapStateToProps = (state) => {
   return {
@@ -104,11 +104,13 @@ function Home(props) {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 export async function getServerSideProps() {
-  const product = await Product.find({}).lean();
+
+  const products = await Product.find({}).lean();
+  console.log(products);
 
   return {
     props: {
-        product: product.map(eachProduct => convertDocToObj(eachProduct))
+        product: products.map(eachProduct => convertDocToObj(eachProduct))
     },
   };
 }
